@@ -46,40 +46,52 @@ html, body,
   .m-t-10 {
     margin-top: 10px;
   }
+  .m-b-10 {
+    margin-bottom: 10px;
+  }
 `;
 
 export const AppStyles = styled.div`
   height: 100%;
   padding: 30px;
-  .button {
-    text-align: right;
-    margin-bottom: 20px;
+  div > h1 {
+    margin-bottom: 30px;
+    text-align: center;
   }
 `;
-export const NoRecord = styled.div`
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-`;
-export const TodoCard = styled(Card)`
+export const CardStyles = styled(Card)`
   background: ${(props) => props.background};
-  .ant-card-head {
-    .ant-card-head-title {
-      display: flex;
-      justify-content: space-between;
-      font-weight: 600;
-    }
-  }
   .ant-card-body {
     div {
       line-height: 1.5;
     }
-    .time-remain {
-      margin-top: 10px;
-      span {
-        font-weight: 600;
-      }
+    h2 {
+      margin-bottom: 20px;
     }
+    h4 {
+      font-weight: 600;
+      margin: 15px 0;
+    }
+    .ant-form-item {
+      margin-bottom: 10px;
+    }
+  }
+`;
+
+export const SuccessStyles = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  .anticon-check-circle {
+    font-size: 50px;
+    margin-bottom: 20px;
+  }
+  h3 {
+    margin-bottom: 10px;
+  }
+  h4 {
+    margin-bottom: 20px;
   }
 `;

@@ -1,18 +1,10 @@
 import React, { useState } from 'react';
-import {
-  Button,
-  Card,
-  Col,
-  DatePicker,
-  Form,
-  Input,
-  Row,
-  TimePicker,
-} from 'antd';
+import { Button, Col, DatePicker, Form, Input, Row, TimePicker } from 'antd';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { store, history } from '../redux/store';
 import actions from '../redux/subscription/actions';
+import { CardStyles } from '../App.style';
 
 function Subscribe() {
   const { planId } = useParams(),
@@ -36,10 +28,10 @@ function Subscribe() {
   return (
     <Row justify={'center'}>
       <Col span={8}>
-        <Card>
+        <CardStyles>
           <h2>Subscription Details</h2>
           <h3>{currentPlan?.name}</h3>
-          <b>{currentPlan?.price}</b>
+          <h4>{currentPlan?.price}</h4>
           {Object.keys(userDetails).length ? (
             <Form
               id="payment-details"
@@ -114,7 +106,7 @@ function Subscribe() {
                   key="submit"
                   type="primary"
                   htmlType="submit"
-                  className={'m-t-20'}
+                  className={'m-t-10'}
                 >
                   Pay Now!
                 </Button>
@@ -130,7 +122,7 @@ function Subscribe() {
               name={'user'}
               className={'m-t-10'}
             >
-              <h3>Share your details</h3>
+              <h2 className={'m-b-10'}>Share your details</h2>
               <Form.Item
                 label={<>Name</>}
                 name={'name'}
@@ -212,14 +204,14 @@ function Subscribe() {
                   key="submit"
                   type="primary"
                   htmlType="submit"
-                  className={'m-t-20'}
+                  className={'m-t-10'}
                 >
                   Pay Now!
                 </Button>
               </Form.Item>
             </Form>
           )}
-        </Card>
+        </CardStyles>
       </Col>
     </Row>
   );

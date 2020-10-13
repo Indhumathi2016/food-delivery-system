@@ -9,7 +9,7 @@ function Subscription() {
 
   return (
     <div>
-      <h1>Food delivery</h1>
+      <h1>Subscribe your plan</h1>
       <Row gutter={[20, 20]}>
         {plans.map((plan, index) => (
           <Plan plan={plan} index={index} />
