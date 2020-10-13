@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Card, Col } from 'antd';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 function Plan({ plan, index }) {
   return (
@@ -16,4 +17,13 @@ function Plan({ plan, index }) {
     </Col>
   );
 }
+Plan.defaultProps = {
+  plan: {},
+  index: 0,
+};
+
+Plan.propTypes = {
+  plan: PropTypes.object.isRequired,
+  index: PropTypes.number.isRequired,
+};
 export default Plan;

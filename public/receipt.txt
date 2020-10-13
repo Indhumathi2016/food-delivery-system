@@ -1,0 +1,6 @@
+---Purchase details---
+Name : Jhon
+Card No: 8982-9027-2892-8282
+Plan: Monthly subscription
+Paid: Rs.1599
+-------------------------

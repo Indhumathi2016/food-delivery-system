@@ -11,6 +11,8 @@ import {
 } from 'antd';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { store, history } from '../redux/store';
+import actions from '../redux/subscription/actions';
 
 function Subscribe() {
   const { planId } = useParams(),
@@ -19,6 +21,17 @@ function Subscribe() {
     [userDetails, setUserDetails] = useState({});
   function handleConfirm(values) {
     setUserDetails(values);
+  }
+  function handlePayment(paymentDetails) {
+    store.dispatch({
+      type: actions.SET_PAYMENT_DETAILS,
+      payload: { userDetails, paymentDetails },
+    });
+    localStorage.setItem(
+      'payment',
+      JSON.stringify({ userDetails, paymentDetails }),
+    );
+    history.push('/success');
   }
   return (
     <Row justify={'center'}>
@@ -30,7 +43,7 @@ function Subscribe() {
           {Object.keys(userDetails).length ? (
             <Form
               id="payment-details"
-              onFinish={handleConfirm}
+              onFinish={handlePayment}
               colon={false}
               layout={'vertical'}
               hideRequiredMark={true}

@@ -23,6 +23,6 @@ Subscription.defaultProps = {
 };
 
 Subscription.propTypes = {
-  todos: PropTypes.array.isRequired,
+  plans: PropTypes.array.isRequired,
 };
 export default Subscription;
