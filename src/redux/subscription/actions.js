@@ -1,0 +1,8 @@
+const actions = {
+  SET_ADD_MODAL_VISIBLE: 'SET_ADD_MODAL_VISIBLE',
+  ADD_TODO: 'ADD_TODO',
+  MARK_AS_COMPLETE: 'MARK_AS_COMPLETE',
+  DELETE_TODO: 'DELETE_TODO',
+};
+
+export default actions;
